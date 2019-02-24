@@ -1,37 +1,12 @@
-<!-- property binding -->
-<img [src]="imageUrl" />
+<!-- Angular Build-in Pipes -->
+<p>{{ name | uppercase }}</p>
+<p>{{ name | lowercase }}</p>
+<p>{{ num | number:'1.1-2' }}</p>
+<p>{{ price | currency:'LKR' }}</p>
+<p>{{ price | percent }}</p>
+<p>{{ today | date:shortDate}}</p>
 
-<!-- class binding -->
-<div [class.yellowBox]="showClass">
-  Yellow Box
-</div>
-<!-- Another Class Definition -->
-<div [ngClass]="{'yellowBox': showClass, 'marpad-10': showClass}">
-  Yellow Box
-</div>
+<p>{{ 'My Custom Pipe What Man' | rmspace }}</p>
 
-<!-- Style Binding -->
-<p [ngStyle]="{'background-color': bgcolor, 'margin.px': marginSize}">
-  Let's make this font bolder
-</p>
-
-<!-- Event Binding -->
-<button (click)="callFunction($event)">
-  Click
-</button>
-
-<!-- Event Filtering -->
-<input (keyup.enter)="callFunction($event)" />
-
-<!-- Event Binding -->
-<div (click)="divCalled()">
-  <button (click)="callFunction($event)">
-    Click Again
-  </button>  
-</div>
-
-<!-- Two way data binding -->
-<input [(ngModel)]="twoWay" />
-<h1>two way: {{twoWay}}</h1>
-
+<!-- Custom Pipes -->
 <router-outlet></router-outlet>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CheckboxControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,19 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  imageUrl = 'https://raw.githubusercontent.com/dart-lang/logos/master/logos_and_wordmarks/angulardart-logo.png';
-  showClass = true;
-  bgcolor = 'red';
-  marginSize = 100;
-
-  callFunction(e) {
-    console.log(e.target);
-  }
-
-  divCalled() {
-    console.log('A div has been called');
-  }
-
-  let twoWay:string;
+  name = 'Charles Dilip';
+  num = 100000;
+  price = 100;
+  today = new Date();
 }
 
