@@ -95,6 +95,3 @@ imports: [
 // TS
 let twoWay:string;
 ~~~
-
-- ##### pipes
-- ##### custom pipes
