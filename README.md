@@ -154,3 +154,5 @@ alertName(e: AlertEventArgs) {
         <ng-container class="heading">This is the heading...</ng-container>
         </print-name>
         ~~~
+<br>
+<hr>
