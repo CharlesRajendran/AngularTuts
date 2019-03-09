@@ -129,6 +129,8 @@ alertName(e: AlertEventArgs) {
             - Javascript native shadow dom.
         - ShadowDom
         - None
+<br>
+<hr>
 
 - ### NgContainer, NgContent
     - Let's say you want to add custom content/html inside a created component, then you have to use `ng-content`
