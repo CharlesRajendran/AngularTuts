@@ -123,7 +123,7 @@ alertName(e: AlertEventArgs) {
             - Angular's own emulated shadow dom solution
             - This is the default, the reason for this is, `shadow dom` is supported by every browser.
             - This is a angular specific shadow dom, this will add a attribute to the element, and use that to style
-            ![Emulated Shadow Dom]()
+            ![Emulated Shadow Dom](https://github.com/CharlesRajendran/AngularTuts/blob/unit-3/img/emulated-shadow.JPG)
 
         - Native
             - Javascript native shadow dom.
