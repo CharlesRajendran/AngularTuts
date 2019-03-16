@@ -42,8 +42,6 @@ export class AppComponent {
   showThis = false;
 }
 ~~~
-<br>
-<hr>
 
 #### Note: Hidding property instead of *ngIf
 - ngIf is structural directive, which means it will re render the dom when it detects changes, it is quite an expensive thing, hidden will control the hidden property of the element, so it will not rerender the dom, but it will not remove the unused code, which will result in making the file huge, so it will also expensive in large projects.
@@ -61,6 +59,8 @@ export class AppComponent {
 ~~~
   hideThis = true;
 ~~~
+<br>
+<hr>
 
 ### NgSwitchCase
 ##### HTML
@@ -181,3 +181,5 @@ export class FormatDirective {
 
 }
 ~~~
+<br>
+<hr>
