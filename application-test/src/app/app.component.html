@@ -1,21 +1,69 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="col-md-6 col-sm-12">
+  <form #formVar="ngForm" (ngSubmit)="log(formVar)">
 
-<router-outlet></router-outlet>
+    <div class="form-group">
+      <label for="email">Email: </label>
+      <input class="form-control"
+        ngModel name="email"
+        #emailVar="ngModel" (change)="log(emailVar)"
+        id="email"
+        type="email" required pattern="(.)+com$" />
+
+      <div class="alert alert-danger" *ngIf="emailVar.touched && emailVar.invalid">
+        <div *ngIf="emailVar.errors.required"> Need a value </div>
+        <div *ngIf="emailVar.errors.pattern"> Not a valid email address </div>
+      </div>
+    </div>
+
+    <div ngModelGroup="address" class="">
+      <div class="form-group">
+        <label for="street">Street: </label>
+        <input class="form-control"
+          ngModel name="street"
+          />
+      </div>
+
+      <div class="form-group">
+        <label for="state">State: </label>
+        <input class="form-control"
+          ngModel name="state"
+          />
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country: </label>
+        <input class="form-control"
+          ngModel name="country"
+          />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password: </label>
+      <input
+        class="form-control" type="password"
+        ngModel name="password"
+        #passwordVar="ngModel" (change)="log(passwordVar)"
+        id="password" autocomplete
+        required minlength="8" />
+
+      <div class="alert alert-danger" *ngIf="passwordVar.touched && passwordVar.invalid">
+        <div *ngIf="passwordVar.errors.required"> Need a value</div>
+        <div *ngIf="passwordVar.errors.minlength"> Password expects {{ passwordVar.errors.minlength.requiredLength }} characters at least.</div>
+      </div>
+    </div>
+
+    <div>
+      <input type="radio" ngModel name="gender" value="1" /> Male
+      <input type="radio" ngModel name="gender" value="2" /> Female
+    </div>
+
+    <div>
+        <input type="checkbox" ngModel name="licence" /> Accept the licence agreement.
+    </div>
+
+    <button id="submit" class="btn btn-primary" [disabled]="!formVar.valid">Submit</button>
+  </form>
+
+    {{ formVar.value | json }}
+<div>
