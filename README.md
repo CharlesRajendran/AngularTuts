@@ -3,7 +3,7 @@ Angular handle the forms in two different way,
 1. Template Driven Forms
     - Angular provide some directives, which we use with input controls. This directives will internally create some objects of `FormControl` and `FormGroup` class to elements which will allow us to use some validations such as required, minlength, pattern and etc.
 <br>
-1. Reactive Forms
+2. Reactive Forms
    - We code the forms by creating the object classes in the code, this is very useful, because we can have not only html 5 validations but also we can have custom validations. 
 
 
